@@ -1,0 +1,6 @@
+The experiment runner was smoke-tested end-to-end in the ChatGPT execution environment on 2026-08-08.
+Verified path included: base pretraining, O1/O2/O3/O4/O5R LoRA adaptation, REINFORCE reward learning,
+validated replay, information-theory sweep, distractor sweep, reversal experiment, fully observable MDP
+control training, CSV outputs, and plot generation.
+
+The smoke result is NOT scientific evidence because its training budget/seed count are intentionally small.
