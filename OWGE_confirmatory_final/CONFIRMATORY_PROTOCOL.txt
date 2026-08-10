@@ -1,0 +1,46 @@
+OWGE CONFIRMATORY PROTOCOL (fixed before confirmatory run)
+
+Exploratory pilot already completed:
+  preset=laptop, seeds=[11,22,33,44,55], main rho=0.35,
+  with exploratory rho sweep on seeds [303,404].
+
+Tuning decision from exploratory rho sweep:
+  rho=0.20 for confirmation.
+  Reason: rho=0.20 and rho=0.50 tied for highest mean sweep accuracy;
+  rho=0.20 had lower processing cost, so it is selected by the
+  predeclared tie-break rule: maximize accuracy, then minimize resource cost.
+
+PRIMARY HYPOTHESIS (held-out POMDP accuracy):
+  H0: mu_O4 <= mu_O1
+  HA: mu_O4 >  mu_O1
+  alpha=0.05, one-sided paired test across matched seeds.
+
+SECONDARY HYPOTHESES:
+  H3a H0: mu_O3 <= mu_O1; HA: mu_O3 > mu_O1.
+  H3b H0: mu_O3 <= mu_O2; HA: mu_O3 > mu_O2.
+  H4  H0: mu_O4 <= mu_O3; HA: mu_O4 > mu_O3.
+  H6  H0: mu_OWGE(O5R) >= mu_OWGE(O4); HA: mu_OWGE(O5R) < mu_OWGE(O4).
+  H5 reversal H0: mu_O4 >= mu_O3 after reversal; HA: mu_O4 < mu_O3.
+  MI regime H0: slope[O3-O1 vs conditional MI] <= 0; HA: slope > 0.
+  MDP control H0: (O3-O1)_POMDP <= (O3-O1)_MDP;
+              HA: (O3-O1)_POMDP >  (O3-O1)_MDP.
+
+CONFIRMATORY CONFIGURATION:
+  preset=paper
+  rho=0.20 fixed
+  no sweeps in the primary confirmatory run
+  40 matched fresh seeds
+  15 adaptation epochs
+  1500 adaptation episodes / observer / seed
+  400 validation episodes / seed
+  800 held-out test episodes / seed
+
+Decision rule for PRIMARY:
+  p < 0.05 and observed mean difference O4-O1 > 0 -> reject H0,
+  evidence supports HA within this experimental regime.
+  Otherwise -> fail to reject H0. Do NOT say H0 is proven.
+
+Do not add seeds, change epochs, retune rho, or stop early after viewing p-values.
+If a larger replication is desired, define it as a new independent study before running it.
+
+Fresh confirmatory main seeds: 2001 + 37*i for i=0..39.
