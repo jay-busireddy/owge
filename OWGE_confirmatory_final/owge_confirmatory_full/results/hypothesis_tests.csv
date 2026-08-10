@@ -1,0 +1,9 @@
+hypothesis,metric,comparison,n_pairs,mean_a,mean_b,mean_difference,paired_cohens_d,t_stat,one_sided_p,reject_H0_at_0.05
+PRIMARY: O4 > O1 under delayed partial observability,accuracy,O4 greater O1,40,0.6463125000000001,0.66746875,-0.021156250000000005,-0.24443188548778938,-1.5459229818217437,0.9348999308912062,False
+H3a: O3 > O1 when delayed peripheral information is non-zero,accuracy,O3 greater O1,40,0.65115625,0.66746875,-0.016312500000000008,-0.2309658915875549,-1.4607565584563935,0.9239537784908589,False
+H3b: O3 > O2 under finite resources and sparse useful context,accuracy,O3 greater O2,40,0.65115625,0.52503125,0.126125,1.4362908635642118,9.083901022706113,1.80752235827097e-11,True
+H4: O4 > O3 when validated replay finds stable reusable structure,accuracy,O4 greater O3,40,0.6463125000000001,0.65115625,-0.004843749999999999,-0.06684949526599188,-0.42279333094635596,0.6626158840890299,False
+H6: retrieval-disconnected O5R has lower end-to-end OWGE than O4,OWGE_plus,O5R less O4,40,0.0008491030048146913,0.0008839184938986288,-3.4815489083937044e-05,-0.07388045620175746,-0.467261032339732,0.3214566965077844,False
+H5: O4 can recover more slowly than O3 after predictive reversal,reversal_final_accuracy,O4 less O3,40,0.6493125,0.64575,0.0035625000000000045,0.03630638586901368,0.22962174591006976,0.5902071165576039,False
+H1/H3 regime test: O3-O1 advantage increases as conditional peripheral information increases,slope gap vs conditional MI,slope > 0,30,-8.210646167082474e-05,0.0,-8.210646167082474e-05,,,0.5006301705882775,False
+H1 control: O3-O1 advantage is larger in POMDP than fully observable MDP,difference_of_observer_gaps,(O3-O1)_POMDP greater (O3-O1)_MDP,40,-0.016312500000000008,0.0,-0.016312500000000008,-0.2309658915875549,-1.4607565584563935,0.9239537784908589,False

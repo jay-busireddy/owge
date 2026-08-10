@@ -1,0 +1,22 @@
+OWGE VALIDATION SUMMARY
+=======================
+Base model parameters: 12,074
+Main matched seeds: 40
+
+O1: accuracy=0.667 +/- 0.060, OWGE+=0.001, LoRA norm=3.264
+O2: accuracy=0.525 +/- 0.056, OWGE+=0.025, LoRA norm=2.739
+O3: accuracy=0.651 +/- 0.067, OWGE+=0.001, LoRA norm=3.317
+O4: accuracy=0.646 +/- 0.077, OWGE+=0.001, LoRA norm=2.786
+O5R: accuracy=0.600 +/- 0.069, OWGE+=0.001, LoRA norm=3.011
+
+Exploratory rho sweep best mean held-out accuracy at rho=0.500; do not retroactively substitute this into the same test run.
+
+Hypothesis tests:
+- PRIMARY: O4 > O1 under delayed partial observability: p=0.9349 reject_H0=False
+- H3a: O3 > O1 when delayed peripheral information is non-zero: p=0.924 reject_H0=False
+- H3b: O3 > O2 under finite resources and sparse useful context: p=1.808e-11 reject_H0=True
+- H4: O4 > O3 when validated replay finds stable reusable structure: p=0.6626 reject_H0=False
+- H6: retrieval-disconnected O5R has lower end-to-end OWGE than O4: p=0.3215 reject_H0=False
+- H5: O4 can recover more slowly than O3 after predictive reversal: p=0.5902 reject_H0=False
+- H1/H3 regime test: O3-O1 advantage increases as conditional peripheral information increases: p=0.5006 reject_H0=False
+- H1 control: O3-O1 advantage is larger in POMDP than fully observable MDP: p=0.924 reject_H0=False
