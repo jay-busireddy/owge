@@ -1,0 +1,75 @@
+{
+  "image_size": 48,
+  "episode_len": 6,
+  "cue_step": 1,
+  "central_accuracy": 0.65,
+  "peripheral_accuracy": 0.82,
+  "num_distractors": 5,
+  "fully_observable": false,
+  "goal_switch_fraction": 0.0,
+  "rho_peripheral": 0.2,
+  "weak_billboard_weight": 0.12,
+  "distractor_weight": 0.08,
+  "embed_dim": 32,
+  "hidden_dim": 32,
+  "lora_rank": 4,
+  "lora_alpha": 8.0,
+  "base_pretrain_episodes": 240,
+  "base_pretrain_epochs": 2,
+  "base_lr": 0.003,
+  "train_episodes": 120,
+  "val_episodes": 60,
+  "test_episodes": 100,
+  "train_epochs": 2,
+  "batch_size": 24,
+  "lora_lr": 0.005,
+  "entropy_bonus": 0.01,
+  "grad_clip": 1.0,
+  "replay_buffer_size": 256,
+  "replay_batches_per_epoch": 3,
+  "replay_batch_size": 24,
+  "replay_min_delta": 0.0,
+  "seeds": [
+    11,
+    22
+  ],
+  "mi_sweep_levels": [
+    0.5,
+    0.8,
+    0.95
+  ],
+  "rho_sweep_levels": [
+    0.0,
+    0.35,
+    0.75,
+    1.0
+  ],
+  "rho_sweep_seeds": [
+    303
+  ],
+  "distractor_sweep": [
+    0,
+    5,
+    15
+  ],
+  "sweep_seeds": [
+    101
+  ],
+  "sweep_train_epochs": 1,
+  "sweep_train_episodes": 100,
+  "reversal_epochs": 1,
+  "reversal_episodes": 100,
+  "mdp_control_epochs": 1,
+  "mdp_control_episodes": 80,
+  "owge_wc": 1.0,
+  "owge_wd": 1.0,
+  "owge_wn": 0.7,
+  "owge_wa": 1.0,
+  "owge_wr": 0.8,
+  "owge_wt": 1.0,
+  "owge_lambda_cost": 0.7,
+  "owge_eta_false_assoc": 0.5,
+  "preset": "smoke",
+  "device": "cpu",
+  "num_workers": 0
+}
