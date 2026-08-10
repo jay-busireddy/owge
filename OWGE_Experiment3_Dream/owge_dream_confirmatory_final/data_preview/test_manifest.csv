@@ -1,0 +1,17 @@
+index,phase,style,central_bit,peripheral_bit,label,episode_seed,split,folder
+0,A,factory,0,0,0,33001,test,A_test_00
+1,A,factory,0,1,0,40920,test,A_test_01
+2,A,factory,1,1,1,48839,test,A_test_02
+3,A,factory,1,0,1,56758,test,A_test_03
+0,B,factory,1,1,1,33101,test,B_test_00
+1,B,factory,1,0,0,41020,test,B_test_01
+2,B,factory,0,0,0,48939,test,B_test_02
+3,B,harbor,1,1,1,56858,test,B_test_03
+0,C,warehouse,1,0,0,33201,train,C_train_00
+1,C,warehouse,1,1,1,41120,train,C_train_01
+2,C,warehouse,1,0,0,49039,train,C_train_02
+3,C,crossing,1,0,0,56958,train,C_train_03
+0,C,harbor,0,1,0,33301,test,C_test_00
+1,C,harbor,0,0,1,41220,test,C_test_01
+2,C,factory,0,1,0,49139,test,C_test_02
+3,C,harbor,1,1,1,57058,test,C_test_03
