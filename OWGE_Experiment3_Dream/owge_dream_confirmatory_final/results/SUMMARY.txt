@@ -1,0 +1,37 @@
+OWGE Experiment 3: Mechanism-Adequacy Confirmatory Test
+=====================================================
+
+PRIMARY NULL H0: mean Phase-C balanced accuracy(O4D) <= mean Phase-C balanced accuracy(O1).
+PRIMARY EXPECTED HA: mean Phase-C balanced accuracy(O4D) > mean Phase-C balanced accuracy(O1).
+Primary endpoint: held-out Phase-C compositional-transfer balanced accuracy.
+
+phase observer  accuracy_mean  accuracy_sd  balanced_accuracy_mean  macro_f1_mean  reward_mean  I_durable_mean  retrieval_precision  resource_cost  OWGE_legacy
+    A       O1       1.000000     0.000000                1.000000       1.000000     1.000000        0.000000             0.000000       0.227700     0.002090
+    A       O3       1.000000     0.000000                1.000000       1.000000     1.000000        0.000000             0.000000       0.297000     0.003449
+    A      O4D       0.998312     0.010673                0.998370       0.998311     0.996625        0.000000             1.000000       0.697000     0.002790
+    A      O4M       0.998312     0.010673                0.998370       0.998311     0.996625        0.000000             1.000000       0.697000     0.002790
+    A      O4R       1.000000     0.000000                1.000000       1.000000     1.000000        0.000000             0.000000       0.297000     0.003449
+    B       O1       0.605700     0.074130                0.605803       0.580077     0.211400        0.000000             0.000000       0.227700     0.001023
+    B       O3       0.752000     0.034724                0.750143       0.742601     0.504000        0.000000             0.000000       0.297000     0.002621
+    B      O4D       0.733800     0.055451                0.730847       0.722172     0.467600        0.208783             0.676556       0.697000     0.078623
+    B      O4M       0.733800     0.055451                0.730847       0.722172     0.467600        0.208783             0.676556       0.697000     0.078623
+    B      O4R       0.748600     0.050777                0.747673       0.736693     0.497200        0.000000             0.000000       0.297000     0.002693
+    C       O1       0.502750     0.020829                0.502735       0.501904     0.005500        0.000926             0.000000       0.227700     0.000950
+    C       O3       0.560875     0.104893                0.561636       0.548633     0.121750        0.004887             0.000000       0.297000     0.007745
+    C      O4D       0.757656     0.048750                0.757346       0.742352     0.515313        0.489292             0.757000       0.839857     0.143735
+    C      O4M       0.758844     0.049604                0.758534       0.743501     0.517687        0.493212             0.757000       0.697000     0.153932
+    C      O4R       0.589406     0.119580                0.590562       0.575517     0.178812        0.007319             0.000000       0.297000     0.016895
+
+Hypothesis tests:
+                                                      hypothesis phase                    metric      comparison  n_pairs   mean_a   mean_b  mean_difference  ci95_low  ci95_high  paired_cohens_dz    t_stat  one_sided_p  reject_H0_0.05  holm_adjusted_p  reject_H0_holm_0.05
+        PRIMARY H_A: O4D > O1 on held-out compositional transfer     C         balanced_accuracy  O4D greater O1       40 0.757346 0.502735         0.254611  0.239981   0.269241          5.565768 35.201009 1.805773e-31            True              NaN                 True
+                     S1: associative dream O4D > replay-only O4R     C         balanced_accuracy O4D greater O4R       40 0.757346 0.590562         0.166784  0.126323   0.207245          1.318300  8.337664 1.687009e-10            True     5.061027e-10                 True
+            S2: dream adds value beyond associative memory alone     C         balanced_accuracy O4D greater O4M       40 0.757346 0.758534        -0.001188 -0.010157   0.007782         -0.042349 -0.267839 6.048827e-01           False     1.000000e+00                False
+   S3: associative episodic memory O4M > weighted observation O3     C         balanced_accuracy  O4M greater O3       40 0.758534 0.561636         0.196898  0.158269   0.235527          1.630132 10.309862 5.353408e-13            True     2.141363e-12                 True
+         S4: O3 > O1 when delayed peripheral information matters     B         balanced_accuracy   O3 greater O1       40 0.750143 0.605803         0.144339  0.119769   0.168910          1.878738 11.882182 7.795892e-15            True     3.897946e-14                 True
+S5: O4D has greater durable internalization than replay-only O4R     C           I_durable_joint O4D greater O4R       40 0.489292 0.007319         0.481974  0.469984   0.493963         12.856451 81.311334 1.922506e-45            True     1.153504e-44                 True
+              S6: dream improves associative retrieval precision     C retrieval_label_precision O4D greater O4M       40 0.757000 0.757000         0.000000       NaN        NaN          0.000000       NaN          NaN           False              NaN                False
+    S7: dream improves the specifically unseen (0,0) composition     C          combo00_accuracy O4D greater O4M       40 0.036549 0.039698        -0.003150 -0.037841   0.031542         -0.029036 -0.183638 5.723754e-01           False     1.000000e+00                False
+
+Elapsed seconds: 4949.5
+Important: p<0.05 rejects the stated null; p>=0.05 means fail to reject, not proof of H0.
